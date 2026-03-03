@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8112056005 | Personal Page</title>
+    <meta name="description" content="Personal single-page website for 8112056005 featuring a dynamic live clock.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header class="hero">
+                <h1 id="name">8112056005</h1>
+                <p class="subtitle">Personal Portfolio & Space</p>
+            </header>
+
+            <section class="time-section">
+                <div class="time-display">
+                    <span id="clock" class="clock-digits">10:54:23</span>
+                    <span id="date" class="date-display">Wednesday, February 25, 2026</span>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    Online
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            
+            // Format time
+            const timeOptions = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: false 
+            };
+            document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            
+            // Format date
+            const dateOptions = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', dateOptions);
+        }
+
+        // Initialize and update every second
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Entrance animation trigger
+        window.addEventListener('load', () => {
+            document.querySelector('.glass-card').classList.add('visible');
+        });
+    </script>
+</body>
+</html>

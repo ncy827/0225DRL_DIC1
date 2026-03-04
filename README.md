@@ -1,5 +1,5 @@
 # 🔗 Demo
-👉 [[https://your-demo-url.com](https://ncy827.github.io/0225DRL_DIC1/)](https://ncy827.github.io/0225DRL_DIC1/)
+👉 [(https://ncy827.github.io/0225DRL_DIC1/)](https://ncy827.github.io/0225DRL_DIC1/)
 
 ---
 

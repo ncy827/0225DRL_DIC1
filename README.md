@@ -1,31 +1,141 @@
-# Project Summary - February 25, 2026
+# 🔗 Demo
+👉 https://your-demo-url.com
 
-## Overview
-Today, we developed and deployed a modern, premium personal webpage for **8112056005**. The project involved creating a high-quality frontend and setting up a robust version control workflow with GitHub.
+---
 
-**Live Demo:** [https://ncy827.github.io/0225DRL_DIC1/](https://ncy827.github.io/0225DRL_DIC1/)
+# Nien Personal Page
 
-![Homepage Screenshot](homepage.png)
+A simple personal single-page website built using HTML, CSS, and JavaScript.  
+This page displays the name **Nien** and shows the **live current time**, updating every second.
 
-## Completed Tasks
+---
 
-### 1. Web Development
-- **Main Interface (`index.html`)**: Built a sleek, single-page layout featuring a dynamic greeting, current time display, and professional sections (About, Skills, Projects).
-- **Styling (`style.css`)**: Implemented a "Glassmorphism" design system using CSS variables, smooth gradients, and micro-animations for a premium look and feel.
-- **Dynamic Features**: Added JavaScript to handle real-time clock updates and responsive interactions.
+## 📌 Features
 
-### 2. Git & GitHub Integration
-- **Local Initialization**: Initialized a new Git repository in the `L1-PersonalPage` directory.
-- **Privacy Protection**: Identified and resolved a GitHub push rejection caused by email privacy settings. 
-- **Noreply Configuration**: Configured the project to use the GitHub-provided noreply email (`16698007+ncy827@users.noreply.github.com`) to ensure privacy without blocking deployments.
-- **Successful Deployment**: Pushed the entire codebase to the remote repository: [https://github.com/ncy827/0225DRL_DIC1.git](https://github.com/ncy827/0225DRL_DIC1.git).
+- Displays the name **Nien**
+- Shows real-time current date and time
+- Updates automatically every second
+- Uses external CSS and JavaScript files
+- Clean modern glassmorphism design
+- Responsive centered layout
 
-## File Structure
-- `index.html`: Core structure and content.
-- `style.css`: Visual design and animations.
-- `README.md`: This project documentation.
+---
 
-## Future Recommendations
-- Add more personal project showcases to the 'Projects' section.
-- Integrate a contact form or social media links.
-- Consider deploying the site via GitHub Pages for public access.
+## 🛠 Technologies Used
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+---
+
+## 📂 Project Structure
+/project-folder
+│
+├── index.html
+├── style.css
+└── script.js
+
+
+---
+
+## 🚀 How to Run
+
+1. Download the files below.
+2. Place them in the same folder.
+3. Open `index.html` in your browser.
+4. The page will automatically display the name and live time.
+
+---
+
+# 📄 Source Code
+
+---
+
+## 1️⃣ index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nien - Personal Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nien</h1>
+        <div id="time"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+2️⃣ style.css
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#time {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+3️⃣ script.js (Stable Live Clock Version)
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateTime() {
+        const now = new Date();
+
+        const options = {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        };
+
+        const formattedTime = now.toLocaleString("zh-TW", options);
+        document.getElementById("time").textContent = formattedTime;
+    }
+
+    updateTime(); // Run immediately
+    setInterval(updateTime, 1000); // Update every second
+
+});
+
+⏱ How It Works
+
+Date() retrieves the current system time.
+
+toLocaleString("zh-TW", options) formats it clearly.
+
+setInterval() refreshes the display every 1000 milliseconds.
+
+DOMContentLoaded ensures the DOM is ready before execution.
